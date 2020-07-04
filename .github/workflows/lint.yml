@@ -1,6 +1,15 @@
 name: lint
 on: [push, pull_request]
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '~1.14.4'
+      - run: ./scripts/check_gofmt.sh
+      - run: go vet ./...
   lint-scripts:
     runs-on: ubuntu-latest
     steps:
