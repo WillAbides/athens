@@ -45,7 +45,7 @@ services:
     environment:
       executable: blob
   mongo:
-    image: mongo:3.7.9-jessie
+    image: mongo:3.6.18
     ports:
       - 27017:27017
   minio:
